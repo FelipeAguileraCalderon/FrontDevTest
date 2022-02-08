@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
-import App from './App';
+import { Main } from "../components/Main";
 
 test('Render without crashing', () => {
   const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<Main />, div);
 });

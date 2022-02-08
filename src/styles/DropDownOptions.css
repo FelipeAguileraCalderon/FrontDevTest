@@ -1,0 +1,40 @@
+.dropDownOptions{
+    position: absolute;
+    top: 100%;
+    margin-top: 3px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #2e2e2e;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 #dad8d8;
+    background-color: white;
+}
+
+.dropDownOptionsContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 46px;
+    position: relative;
+}
+
+.dropDownOptionsContainer:hover{
+    background-color: #eaeaea;
+    border-radius: 4px;
+}
+
+.dropDownOptionsText{
+    position: absolute;
+    left: 48px;
+    user-select: none;
+}
+
+.imgDropDownOptions{
+    position: absolute;
+    left: 11px;
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+}

@@ -1,0 +1,29 @@
+.containerOptions{
+    height: 33px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* color: white; */
+}
+
+.clicked{
+    width: 98px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    border: solid 1px #1797ff;;
+    cursor: pointer;
+}
+
+.notClicked{
+    width: 98px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    border: solid 1px #d6d6d6;
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+.newsListContainer{
+    margin-top: 38px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+@media (max-width:768px) {
+    .newsListContainer{
+        margin-top: 38px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        z-index: 1;
+    }
+}
