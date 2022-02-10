@@ -14,7 +14,6 @@ export const DropDownOptions = (props) => {
         }
         else{
             localStorage.setItem('selected', 'angular')
-            setSelectedNews('angular')
             window.location.reload();    
         }
     }
@@ -28,7 +27,6 @@ export const DropDownOptions = (props) => {
         }
         else{
             localStorage.setItem('selected', 'react')
-            setSelectedNews('react')
             window.location.reload();     
         }
     }
@@ -42,7 +40,6 @@ export const DropDownOptions = (props) => {
         }
         else{
             localStorage.setItem('selected', 'vue')
-            setSelectedNews('vue')
             window.location.reload();     
         }
     }

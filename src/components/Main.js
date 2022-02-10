@@ -15,12 +15,8 @@ export const Main = () => {
 
   useEffect(() => {
     async function setData(){
-
       const selected = localStorage.getItem('selected')
       const faves = localStorage.getItem('faves')
-      const angular = await axios.get(`https://hn.algolia.com/api/v1/search_by_date?query=angular&page=${currentPage - 1}`)
-      const react = await axios.get(`https://hn.algolia.com/api/v1/search_by_date?query=reactjs&page=${currentPage - 1}`)
-      const vue = await axios.get(`https://hn.algolia.com/api/v1/search_by_date?query=vuejs&page=${currentPage - 1}`)
 
       if(faves === null){
         const faves = {
@@ -29,19 +25,23 @@ export const Main = () => {
         localStorage.setItem('faves', JSON.stringify(faves))
       }
       if(selected === null){
-        setDeployedNews([])
-        localStorage.setItem('selected', 'all') 
+        localStorage.setItem('selected', 'all')
       }
-      else if(selected === 'all'){
+
+      const angular = await axios.get(`https://hn.algolia.com/api/v1/search_by_date?query=angular&page=${currentPage - 1}`)
+      const react = await axios.get(`https://hn.algolia.com/api/v1/search_by_date?query=reactjs&page=${currentPage - 1}`)
+      const vue = await axios.get(`https://hn.algolia.com/api/v1/search_by_date?query=vuejs&page=${currentPage - 1}`)
+
+      if(localStorage.getItem('selected') === 'all'){
         setDeployedNews([])
       }
-      else if(selected === 'angular'){
+      else if(localStorage.getItem('selected') === 'angular'){
         setDeployedNews(angular.data.hits)
       }
-      else if(selected === 'react'){
+      else if(localStorage.getItem('selected') === 'react'){
         setDeployedNews(react.data.hits)
       }
-      else if(selected === 'vue'){
+      else if(localStorage.getItem('selected') === 'vue'){
         setDeployedNews(vue.data.hits)
       }
     }
@@ -66,7 +66,7 @@ export const Main = () => {
         <NewsList deployedNews={deployedNews} windowSelected={windowSelected} setDeployedNews={setDeployedNews}/>
         {
           dropVisibility === true
-          ? (localStorage.getItem('selected') === 'all' 
+          ? (deployedNews.length === 0 
             ? null
             : <Pagination setDeployedNews={setDeployedNews} currentPage={currentPage} setCurrentPage={setCurrentPage}/>)
           : null

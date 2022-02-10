@@ -5,13 +5,15 @@ import { DropDownOptions } from './DropDownOptions';
 export const DropDownMenu = (props) => {
 
     const [isVisible, setIsVisible] = useState(false)
-    const [selectedNews, setSelectedNews] = useState('')
+    const [selectedNews, setSelectedNews] = useState('all')
 
     const {setDeployedNews} = props
     
     useEffect(() => {
         const newsSelected = localStorage.getItem('selected')
-        setSelectedNews(newsSelected)
+        if(newsSelected !== null){
+            setSelectedNews(newsSelected)
+        }
     }, []);
 
     function setVisible(){
